@@ -11,6 +11,7 @@
 
     <properties>
         <cucumber.bom>7.18.1</cucumber.bom>
+        <java>23</java>
         <openapi.generator.maven.plugin>7.8.0</openapi.generator.maven.plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -51,8 +52,9 @@
                     <generateModelDocumentation>false</generateModelDocumentation>
                     <generateSupportingFiles>false</generateSupportingFiles>
                     <addCompileSourceRoot>false</addCompileSourceRoot>
-                    <inputSpec></inputSpec>
-                    <skip>false</skip>
+                    <library>jersey2</library>
+                    <inputSpec>${project.basedir}/src/main/resources/swagger.json</inputSpec>
+                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
@@ -69,8 +71,8 @@
                 <version>3.13.0</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>1.23</source>
-                    <target>1.23</target>
+                    <source>${java}</source>
+                    <target>${java}</target>
                 </configuration>
             </plugin>
         </plugins>
