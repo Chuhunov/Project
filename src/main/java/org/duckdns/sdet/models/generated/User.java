@@ -1,6 +1,6 @@
 /*
- * Swagger Petstore
- * This is a sample Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
+ * Swagger Library
+ * This is a sample Library server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: apiteam@swagger.io
@@ -33,23 +33,30 @@ import java.util.Objects;
         User.JSON_PROPERTY_PHONE,
         User.JSON_PROPERTY_USER_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-21T22:21:26.848982+02:00[Europe/Warsaw]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class User {
     public static final String JSON_PROPERTY_ID = "id";
-    public static final String JSON_PROPERTY_USERNAME = "username";
-    public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
-    public static final String JSON_PROPERTY_LAST_NAME = "lastName";
-    public static final String JSON_PROPERTY_EMAIL = "email";
-    public static final String JSON_PROPERTY_PASSWORD = "password";
-    public static final String JSON_PROPERTY_PHONE = "phone";
-    public static final String JSON_PROPERTY_USER_STATUS = "userStatus";
     private Long id;
+
+    public static final String JSON_PROPERTY_USERNAME = "username";
     private String username;
+
+    public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
     private String firstName;
+
+    public static final String JSON_PROPERTY_LAST_NAME = "lastName";
     private String lastName;
+
+    public static final String JSON_PROPERTY_EMAIL = "email";
     private String email;
+
+    public static final String JSON_PROPERTY_PASSWORD = "password";
     private String password;
+
+    public static final String JSON_PROPERTY_PHONE = "phone";
     private String phone;
+
+    public static final String JSON_PROPERTY_USER_STATUS = "userStatus";
     private Integer userStatus;
 
     public User() {

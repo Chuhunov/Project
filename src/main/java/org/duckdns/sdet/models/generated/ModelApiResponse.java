@@ -1,6 +1,6 @@
 /*
- * Swagger Petstore
- * This is a sample Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
+ * Swagger Library
+ * This is a sample Library server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: apiteam@swagger.io
@@ -30,13 +30,15 @@ import java.util.Objects;
         ModelApiResponse.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("ApiResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-21T22:21:26.848982+02:00[Europe/Warsaw]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class ModelApiResponse {
     public static final String JSON_PROPERTY_CODE = "code";
-    public static final String JSON_PROPERTY_TYPE = "type";
-    public static final String JSON_PROPERTY_MESSAGE = "message";
     private Integer code;
+
+    public static final String JSON_PROPERTY_TYPE = "type";
     private String type;
+
+    public static final String JSON_PROPERTY_MESSAGE = "message";
     private String message;
 
     public ModelApiResponse() {

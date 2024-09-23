@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Swagger Petstore",
-    "description": "This is a sample Petstore server.  You can find\nout more about Swagger at\n[http://swagger.io](http://swagger.io) or on\n[irc.freenode.net, #swagger](http://swagger.io/irc/).\n",
+    "title": "Swagger Library",
+    "description": "This is a sample Library server.  You can find\nout more about Swagger at\n[http://swagger.io](http://swagger.io) or on\n[irc.freenode.net, #swagger](http://swagger.io/irc/).\n",
     "termsOfService": "http://swagger.io/terms/",
     "contact": {
       "email": "apiteam@swagger.io"
@@ -23,13 +23,13 @@
       "description": "SwaggerHub API Auto Mocking"
     },
     {
-      "url": "https://petstore.swagger.io/v2"
+      "url": "https://bookstore.swagger.io/v2"
     }
   ],
   "tags": [
     {
-      "name": "pet",
-      "description": "Everything about your Pets",
+      "name": "book",
+      "description": "Everything about your books",
       "externalDocs": {
         "description": "Find out more",
         "url": "http://swagger.io"
@@ -37,7 +37,7 @@
     },
     {
       "name": "store",
-      "description": "Access to Petstore orders"
+      "description": "Access to Library orders"
     },
     {
       "name": "user",
@@ -49,22 +49,22 @@
     }
   ],
   "paths": {
-    "/pet": {
+    "/book": {
       "put": {
         "tags": [
-          "pet"
+          "book"
         ],
-        "summary": "Update an existing pet",
-        "operationId": "updatePet",
+        "summary": "Update an existing book",
+        "operationId": "updateBook",
         "requestBody": {
-          "$ref": "#/components/requestBodies/Pet"
+          "$ref": "#/components/requestBodies/Book"
         },
         "responses": {
           "400": {
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Book not found"
           },
           "405": {
             "description": "Validation exception"
@@ -72,21 +72,21 @@
         },
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "bookstore_auth": [
+              "write:books",
+              "read:books"
             ]
           }
         ]
       },
       "post": {
         "tags": [
-          "pet"
+          "book"
         ],
-        "summary": "Add a new pet to the store",
-        "operationId": "addPet",
+        "summary": "Add a new book to the store",
+        "operationId": "addBook",
         "requestBody": {
-          "$ref": "#/components/requestBodies/Pet"
+          "$ref": "#/components/requestBodies/Book"
         },
         "responses": {
           "405": {
@@ -95,22 +95,22 @@
         },
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "bookstore_auth": [
+              "write:books",
+              "read:books"
             ]
           }
         ]
       }
     },
-    "/pet/findByStatus": {
+    "/book/findByStatus": {
       "get": {
         "tags": [
-          "pet"
+          "book"
         ],
-        "summary": "Finds Pets by status",
+        "summary": "Finds Books by status",
         "description": "Multiple status values can be provided with comma separated strings",
-        "operationId": "findPetsByStatus",
+        "operationId": "findBooksByStatus",
         "parameters": [
           {
             "name": "status",
@@ -141,7 +141,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pet"
+                    "$ref": "#/components/schemas/Book"
                   }
                 }
               },
@@ -149,7 +149,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pet"
+                    "$ref": "#/components/schemas/Book"
                   }
                 }
               }
@@ -161,22 +161,22 @@
         },
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "bookstore_auth": [
+              "write:books",
+              "read:books"
             ]
           }
         ]
       }
     },
-    "/pet/findByTags": {
+    "/book/findByTags": {
       "get": {
         "tags": [
-          "pet"
+          "book"
         ],
-        "summary": "Finds Pets by tags",
+        "summary": "Finds Books by tags",
         "description": "Muliple tags can be provided with comma separated strings. Use\\ \\ tag1, tag2, tag3 for testing.",
-        "operationId": "findPetsByTags",
+        "operationId": "findBooksByTags",
         "parameters": [
           {
             "name": "tags",
@@ -201,7 +201,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pet"
+                    "$ref": "#/components/schemas/Book"
                   }
                 }
               },
@@ -209,7 +209,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pet"
+                    "$ref": "#/components/schemas/Book"
                   }
                 }
               }
@@ -222,27 +222,27 @@
         "deprecated": true,
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "bookstore_auth": [
+              "write:books",
+              "read:books"
             ]
           }
         ]
       }
     },
-    "/pet/{petId}": {
+    "/book/{bookId}": {
       "get": {
         "tags": [
-          "pet"
+          "book"
         ],
-        "summary": "Find pet by ID",
-        "description": "Returns a single pet",
-        "operationId": "getPetById",
+        "summary": "Find book by ID",
+        "description": "Returns a single book",
+        "operationId": "getBookById",
         "parameters": [
           {
-            "name": "petId",
+            "name": "bookId",
             "in": "path",
-            "description": "ID of pet to return",
+            "description": "ID of book to return",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -258,12 +258,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Book"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Book"
                 }
               }
             }
@@ -272,7 +272,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Book not found"
           }
         },
         "security": [
@@ -283,15 +283,15 @@
       },
       "post": {
         "tags": [
-          "pet"
+          "book"
         ],
-        "summary": "Updates a pet in the store with form data",
-        "operationId": "updatePetWithForm",
+        "summary": "Updates a book in the store with form data",
+        "operationId": "updateBookWithForm",
         "parameters": [
           {
-            "name": "petId",
+            "name": "bookId",
             "in": "path",
-            "description": "ID of pet that needs to be updated",
+            "description": "ID of book that needs to be updated",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -305,7 +305,7 @@
           "content": {
             "application/x-www-form-urlencoded": {
               "schema": {
-                "$ref": "#/components/schemas/pet_petId_body"
+                "$ref": "#/components/schemas/book_bookId_body"
               }
             }
           }
@@ -317,19 +317,19 @@
         },
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "bookstore_auth": [
+              "write:books",
+              "read:books"
             ]
           }
         ]
       },
       "delete": {
         "tags": [
-          "pet"
+          "book"
         ],
-        "summary": "Deletes a pet",
-        "operationId": "deletePet",
+        "summary": "Deletes a book",
+        "operationId": "deleteBook",
         "parameters": [
           {
             "name": "api_key",
@@ -342,9 +342,9 @@
             }
           },
           {
-            "name": "petId",
+            "name": "bookId",
             "in": "path",
-            "description": "Pet id to delete",
+            "description": "Book id to delete",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -359,31 +359,31 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Book not found"
           }
         },
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "bookstore_auth": [
+              "write:books",
+              "read:books"
             ]
           }
         ]
       }
     },
-    "/pet/{petId}/uploadImage": {
+    "/book/{bookId}/uploadImage": {
       "post": {
         "tags": [
-          "pet"
+          "book"
         ],
         "summary": "uploads an image",
         "operationId": "uploadFile",
         "parameters": [
           {
-            "name": "petId",
+            "name": "bookId",
             "in": "path",
-            "description": "ID of pet to update",
+            "description": "ID of book to update",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -417,9 +417,9 @@
         },
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "bookstore_auth": [
+              "write:books",
+              "read:books"
             ]
           }
         ]
@@ -430,7 +430,7 @@
         "tags": [
           "store"
         ],
-        "summary": "Returns pet inventories by status",
+        "summary": "Returns book inventories by status",
         "description": "Returns a map of status codes to quantities",
         "operationId": "getInventory",
         "responses": {
@@ -461,10 +461,10 @@
         "tags": [
           "store"
         ],
-        "summary": "Place an order for a pet",
+        "summary": "Place an order for a book",
         "operationId": "placeOrder",
         "requestBody": {
-          "description": "order placed for purchasing the pet",
+          "description": "order placed for purchasing the book",
           "content": {
             "application/json": {
               "schema": {
@@ -508,7 +508,7 @@
           {
             "name": "orderId",
             "in": "path",
-            "description": "ID of pet that needs to be fetched",
+            "description": "ID of book that needs to be fetched",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -847,7 +847,7 @@
             "type": "integer",
             "format": "int64"
           },
-          "petId": {
+          "bookId": {
             "type": "integer",
             "format": "int64"
           },
@@ -942,7 +942,7 @@
           "name": "Tag"
         }
       },
-      "Pet": {
+      "Book": {
         "required": [
           "name",
           "photoUrls"
@@ -982,7 +982,7 @@
           },
           "status": {
             "type": "string",
-            "description": "pet status in the store",
+            "description": "book status in the store",
             "enum": [
               "available",
               "pending",
@@ -991,7 +991,7 @@
           }
         },
         "xml": {
-          "name": "Pet"
+          "name": "Book"
         }
       },
       "ApiResponse": {
@@ -1009,32 +1009,32 @@
           }
         }
       },
-      "pet_petId_body": {
+      "book_bookId_body": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
-            "description": "Updated name of the pet"
+            "description": "Updated name of the book"
           },
           "status": {
             "type": "string",
-            "description": "Updated status of the pet"
+            "description": "Updated status of the book"
           }
         }
       }
     },
     "requestBodies": {
-      "Pet": {
-        "description": "Pet object that needs to be added to the store",
+      "Book": {
+        "description": "Book object that needs to be added to the store",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Pet"
+              "$ref": "#/components/schemas/Book"
             }
           },
           "application/xml": {
             "schema": {
-              "$ref": "#/components/schemas/Pet"
+              "$ref": "#/components/schemas/Book"
             }
           }
         },
@@ -1056,14 +1056,14 @@
       }
     },
     "securitySchemes": {
-      "petstore_auth": {
+      "bookstore_auth": {
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+            "authorizationUrl": "http://bookstore.swagger.io/oauth/dialog",
             "scopes": {
-              "write:pets": "modify pets in your account",
-              "read:pets": "read your pets"
+              "write:books": "modify books in your account",
+              "read:books": "read your books"
             }
           }
         }

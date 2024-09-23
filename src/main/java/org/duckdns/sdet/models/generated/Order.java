@@ -1,6 +1,6 @@
 /*
- * Swagger Petstore
- * This is a sample Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
+ * Swagger Library
+ * This is a sample Library server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: apiteam@swagger.io
@@ -24,26 +24,34 @@ import java.util.Objects;
  */
 @JsonPropertyOrder({
         Order.JSON_PROPERTY_ID,
-        Order.JSON_PROPERTY_PET_ID,
+        Order.JSON_PROPERTY_BOOK_ID,
         Order.JSON_PROPERTY_QUANTITY,
         Order.JSON_PROPERTY_SHIP_DATE,
         Order.JSON_PROPERTY_STATUS,
         Order.JSON_PROPERTY_COMPLETE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-21T22:21:26.848982+02:00[Europe/Warsaw]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class Order {
     public static final String JSON_PROPERTY_ID = "id";
-    public static final String JSON_PROPERTY_PET_ID = "petId";
-    public static final String JSON_PROPERTY_QUANTITY = "quantity";
-    public static final String JSON_PROPERTY_SHIP_DATE = "shipDate";
+    public static final String JSON_PROPERTY_BOOK_ID = "bookId";
     public static final String JSON_PROPERTY_STATUS = "status";
     public static final String JSON_PROPERTY_COMPLETE = "complete";
+
+    public static final String JSON_PROPERTY_QUANTITY = "quantity";
     private Long id;
-    private Long petId;
-    private Integer quantity;
+
+    public static final String JSON_PROPERTY_SHIP_DATE = "shipDate";
     private OffsetDateTime shipDate;
+    private Long bookId;
+    private Integer quantity;
     private StatusEnum status;
+
+    public Order bookId(Long bookId) {
+        this.bookId = bookId;
+        return this;
+    }
     private Boolean complete = false;
+
     public Order() {
     }
 
@@ -65,35 +73,52 @@ public class Order {
         return id;
     }
 
+
     @JsonProperty(JSON_PROPERTY_ID)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Order petId(Long petId) {
-        this.petId = petId;
-        return this;
+    /**
+     * Get bookId
+     *
+     * @return bookId
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(JSON_PROPERTY_BOOK_ID)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+    @JsonProperty(JSON_PROPERTY_BOOK_ID)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
 
     /**
-     * Get petId
-     *
-     * @return petId
+     * Return true if this Order object is equal to o.
      */
-    @javax.annotation.Nullable
-    @JsonProperty(JSON_PROPERTY_PET_ID)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-    public Long getPetId() {
-        return petId;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Order order = (Order) o;
+        return Objects.equals(this.id, order.id) &&
+                Objects.equals(this.bookId, order.bookId) &&
+                Objects.equals(this.quantity, order.quantity) &&
+                Objects.equals(this.shipDate, order.shipDate) &&
+                Objects.equals(this.status, order.status) &&
+                Objects.equals(this.complete, order.complete);
     }
 
-    @JsonProperty(JSON_PROPERTY_PET_ID)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-    public void setPetId(Long petId) {
-        this.petId = petId;
-    }
 
     public Order quantity(Integer quantity) {
         this.quantity = quantity;
@@ -113,11 +138,13 @@ public class Order {
         return quantity;
     }
 
+
     @JsonProperty(JSON_PROPERTY_QUANTITY)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
 
     public Order shipDate(OffsetDateTime shipDate) {
         this.shipDate = shipDate;
@@ -137,11 +164,13 @@ public class Order {
         return shipDate;
     }
 
+
     @JsonProperty(JSON_PROPERTY_SHIP_DATE)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setShipDate(OffsetDateTime shipDate) {
         this.shipDate = shipDate;
     }
+
 
     public Order status(StatusEnum status) {
         this.status = status;
@@ -161,11 +190,13 @@ public class Order {
         return status;
     }
 
+
     @JsonProperty(JSON_PROPERTY_STATUS)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
 
     public Order complete(Boolean complete) {
         this.complete = complete;
@@ -185,35 +216,16 @@ public class Order {
         return complete;
     }
 
+
     @JsonProperty(JSON_PROPERTY_COMPLETE)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setComplete(Boolean complete) {
         this.complete = complete;
     }
 
-    /**
-     * Return true if this Order object is equal to o.
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Order order = (Order) o;
-        return Objects.equals(this.id, order.id) &&
-                Objects.equals(this.petId, order.petId) &&
-                Objects.equals(this.quantity, order.quantity) &&
-                Objects.equals(this.shipDate, order.shipDate) &&
-                Objects.equals(this.status, order.status) &&
-                Objects.equals(this.complete, order.complete);
-    }
-
     @Override
     public int hashCode() {
-        return Objects.hash(id, petId, quantity, shipDate, status, complete);
+        return Objects.hash(id, bookId, quantity, shipDate, status, complete);
     }
 
     @Override
@@ -221,7 +233,7 @@ public class Order {
         StringBuilder sb = new StringBuilder();
         sb.append("class Order {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    petId: ").append(toIndentedString(petId)).append("\n");
+        sb.append("    bookId: ").append(toIndentedString(bookId)).append("\n");
         sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
         sb.append("    shipDate: ").append(toIndentedString(shipDate)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

@@ -11,6 +11,7 @@
 
     <properties>
         <cucumber.bom>7.18.1</cucumber.bom>
+        <jackson.annotations>2.15.2</jackson.annotations>
         <java>23</java>
         <openapi.generator.maven.plugin>7.8.0</openapi.generator.maven.plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,6 +26,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.annotations}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -33,6 +39,10 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
         </dependency>
     </dependencies>
 
@@ -54,11 +64,16 @@
                     <addCompileSourceRoot>false</addCompileSourceRoot>
                     <library>jersey2</library>
                     <inputSpec>${project.basedir}/src/main/resources/swagger.json</inputSpec>
-                    <skip>true</skip>
+                    <skip>false</skip>
+                    <configOptions>
+                        <containerDefaultToNull>true</containerDefaultToNull>
+                        <hideGenerationTimestamp>true</hideGenerationTimestamp>
+                        <openApiNullable>false</openApiNullable>
+                    </configOptions>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>video</id>
+                        <id>api</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>

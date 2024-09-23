@@ -1,6 +1,6 @@
 /*
- * Swagger Petstore
- * This is a sample Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
+ * Swagger Library
+ * This is a sample Library server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: apiteam@swagger.io
@@ -27,11 +27,12 @@ import java.util.Objects;
         Tag.JSON_PROPERTY_ID,
         Tag.JSON_PROPERTY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-21T22:21:26.848982+02:00[Europe/Warsaw]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class Tag {
     public static final String JSON_PROPERTY_ID = "id";
-    public static final String JSON_PROPERTY_NAME = "name";
     private Long id;
+
+    public static final String JSON_PROPERTY_NAME = "name";
     private String name;
 
     public Tag() {

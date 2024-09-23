@@ -1,6 +1,6 @@
 /*
- * Swagger Petstore
- * This is a sample Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
+ * Swagger Library
+ * This is a sample Library server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: apiteam@swagger.io
@@ -21,18 +21,18 @@ import java.util.Objects;
 
 
 /**
- * Pet
+ * Book
  */
 @JsonPropertyOrder({
-        Pet.JSON_PROPERTY_ID,
-        Pet.JSON_PROPERTY_CATEGORY,
-        Pet.JSON_PROPERTY_NAME,
-        Pet.JSON_PROPERTY_PHOTO_URLS,
-        Pet.JSON_PROPERTY_TAGS,
-        Pet.JSON_PROPERTY_STATUS
+        Book.JSON_PROPERTY_ID,
+        Book.JSON_PROPERTY_CATEGORY,
+        Book.JSON_PROPERTY_NAME,
+        Book.JSON_PROPERTY_PHOTO_URLS,
+        Book.JSON_PROPERTY_TAGS,
+        Book.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-21T22:21:26.848982+02:00[Europe/Warsaw]", comments = "Generator version: 7.8.0")
-public class Pet {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+public class Book {
     public static final String JSON_PROPERTY_ID = "id";
     public static final String JSON_PROPERTY_CATEGORY = "category";
     public static final String JSON_PROPERTY_NAME = "name";
@@ -42,13 +42,14 @@ public class Pet {
     private Long id;
     private Category category;
     private String name;
-    private List<String> photoUrls = new ArrayList<>();
-    private List<Tag> tags = new ArrayList<>();
+    private List<String> photoUrls;
+    private List<Tag> tags;
     private StatusEnum status;
-    public Pet() {
+
+    public Book() {
     }
 
-    public Pet id(Long id) {
+    public Book id(Long id) {
         this.id = id;
         return this;
     }
@@ -72,7 +73,7 @@ public class Pet {
         this.id = id;
     }
 
-    public Pet category(Category category) {
+    public Book category(Category category) {
         this.category = category;
         return this;
     }
@@ -96,7 +97,7 @@ public class Pet {
         this.category = category;
     }
 
-    public Pet name(String name) {
+    public Book name(String name) {
         this.name = name;
         return this;
     }
@@ -120,12 +121,12 @@ public class Pet {
         this.name = name;
     }
 
-    public Pet photoUrls(List<String> photoUrls) {
+    public Book photoUrls(List<String> photoUrls) {
         this.photoUrls = photoUrls;
         return this;
     }
 
-    public Pet addPhotoUrlsItem(String photoUrlsItem) {
+    public Book addPhotoUrlsItem(String photoUrlsItem) {
         if (this.photoUrls == null) {
             this.photoUrls = new ArrayList<>();
         }
@@ -152,12 +153,12 @@ public class Pet {
         this.photoUrls = photoUrls;
     }
 
-    public Pet tags(List<Tag> tags) {
+    public Book tags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public Pet addTagsItem(Tag tagsItem) {
+    public Book addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -184,13 +185,13 @@ public class Pet {
         this.tags = tags;
     }
 
-    public Pet status(StatusEnum status) {
+    public Book status(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * pet status in the store
+     * book status in the store
      *
      * @return status
      */
@@ -209,7 +210,7 @@ public class Pet {
     }
 
     /**
-     * Return true if this Pet object is equal to o.
+     * Return true if this Book object is equal to o.
      */
     @Override
     public boolean equals(Object o) {
@@ -219,13 +220,13 @@ public class Pet {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Pet pet = (Pet) o;
-        return Objects.equals(this.id, pet.id) &&
-                Objects.equals(this.category, pet.category) &&
-                Objects.equals(this.name, pet.name) &&
-                Objects.equals(this.photoUrls, pet.photoUrls) &&
-                Objects.equals(this.tags, pet.tags) &&
-                Objects.equals(this.status, pet.status);
+        Book book = (Book) o;
+        return Objects.equals(this.id, book.id) &&
+                Objects.equals(this.category, book.category) &&
+                Objects.equals(this.name, book.name) &&
+                Objects.equals(this.photoUrls, book.photoUrls) &&
+                Objects.equals(this.tags, book.tags) &&
+                Objects.equals(this.status, book.status);
     }
 
     @Override
@@ -236,7 +237,7 @@ public class Pet {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Pet {\n");
+        sb.append("class Book {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -259,7 +260,7 @@ public class Pet {
     }
 
     /**
-     * pet status in the store
+     * book status in the store
      */
     public enum StatusEnum {
         AVAILABLE("available"),
