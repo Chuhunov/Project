@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Book
  */
@@ -34,16 +33,31 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class Book {
     public static final String JSON_PROPERTY_ID = "id";
-    public static final String JSON_PROPERTY_CATEGORY = "category";
-    public static final String JSON_PROPERTY_NAME = "name";
-    public static final String JSON_PROPERTY_PHOTO_URLS = "photoUrls";
-    public static final String JSON_PROPERTY_TAGS = "tags";
-    public static final String JSON_PROPERTY_STATUS = "status";
     private Long id;
+
+    public static final String JSON_PROPERTY_CATEGORY = "category";
     private Category category;
+
+    public static final String JSON_PROPERTY_NAME = "name";
     private String name;
+
+    public static final String JSON_PROPERTY_PHOTO_URLS = "photoUrls";
     private List<String> photoUrls;
+
+    public static final String JSON_PROPERTY_TAGS = "tags";
     private List<Tag> tags;
+    public static final String JSON_PROPERTY_STATUS = "status";
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
     private StatusEnum status;
 
     public Book() {
@@ -67,11 +81,13 @@ public class Book {
         return id;
     }
 
+
     @JsonProperty(JSON_PROPERTY_ID)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setId(Long id) {
         this.id = id;
     }
+
 
     public Book category(Category category) {
         this.category = category;
@@ -91,11 +107,13 @@ public class Book {
         return category;
     }
 
+
     @JsonProperty(JSON_PROPERTY_CATEGORY)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setCategory(Category category) {
         this.category = category;
     }
+
 
     public Book name(String name) {
         this.name = name;
@@ -115,11 +133,13 @@ public class Book {
         return name;
     }
 
+
     @JsonProperty(JSON_PROPERTY_NAME)
     @JsonInclude(value = JsonInclude.Include.ALWAYS)
     public void setName(String name) {
         this.name = name;
     }
+
 
     public Book photoUrls(List<String> photoUrls) {
         this.photoUrls = photoUrls;
@@ -147,11 +167,13 @@ public class Book {
         return photoUrls;
     }
 
+
     @JsonProperty(JSON_PROPERTY_PHOTO_URLS)
     @JsonInclude(value = JsonInclude.Include.ALWAYS)
     public void setPhotoUrls(List<String> photoUrls) {
         this.photoUrls = photoUrls;
     }
+
 
     public Book tags(List<Tag> tags) {
         this.tags = tags;
@@ -179,11 +201,13 @@ public class Book {
         return tags;
     }
 
+
     @JsonProperty(JSON_PROPERTY_TAGS)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
 
     public Book status(StatusEnum status) {
         this.status = status;
@@ -203,11 +227,13 @@ public class Book {
         return status;
     }
 
+
     @JsonProperty(JSON_PROPERTY_STATUS)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
+
 
     /**
      * Return true if this Book object is equal to o.
@@ -246,17 +272,6 @@ public class Book {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n    ");
     }
 
     /**

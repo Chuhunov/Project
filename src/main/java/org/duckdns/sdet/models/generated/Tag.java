@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.Objects;
 
-
 /**
  * Tag
  */
@@ -130,7 +129,7 @@ public class Tag {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
-    }
+  }
 
 }
 

@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.*;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-
 /**
  * Order
  */
@@ -33,8 +32,9 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class Order {
     public static final String JSON_PROPERTY_ID = "id";
-    public static final String JSON_PROPERTY_BOOK_ID = "bookId";
     public static final String JSON_PROPERTY_STATUS = "status";
+
+    public static final String JSON_PROPERTY_BOOK_ID = "bookId";
     public static final String JSON_PROPERTY_COMPLETE = "complete";
 
     public static final String JSON_PROPERTY_QUANTITY = "quantity";
@@ -81,25 +81,6 @@ public class Order {
     }
 
     /**
-     * Get bookId
-     *
-     * @return bookId
-     */
-    @javax.annotation.Nullable
-    @JsonProperty(JSON_PROPERTY_BOOK_ID)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-    public Long getBookId() {
-        return bookId;
-    }
-
-    @JsonProperty(JSON_PROPERTY_BOOK_ID)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-    public void setBookId(Long bookId) {
-        this.bookId = bookId;
-    }
-
-    /**
      * Return true if this Order object is equal to o.
      */
     @Override
@@ -117,6 +98,26 @@ public class Order {
                 Objects.equals(this.shipDate, order.shipDate) &&
                 Objects.equals(this.status, order.status) &&
                 Objects.equals(this.complete, order.complete);
+    }
+
+    /**
+     * Get bookId
+     *
+     * @return bookId
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(JSON_PROPERTY_BOOK_ID)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+
+    @JsonProperty(JSON_PROPERTY_BOOK_ID)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
 
 
@@ -223,6 +224,17 @@ public class Order {
         this.complete = complete;
     }
 
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, bookId, quantity, shipDate, status, complete);
@@ -240,17 +252,6 @@ public class Order {
         sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
         sb.append("}");
         return sb.toString();
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n    ");
     }
 
     /**

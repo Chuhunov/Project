@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.Objects;
 
-
 /**
  * Category
  */
@@ -30,11 +29,12 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class Category {
   public static final String JSON_PROPERTY_ID = "id";
-  public static final String JSON_PROPERTY_NAME = "name";
   private Long id;
+
+    public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public Category() {
+    public Category() {
   }
 
   public Category id(Long id) {
@@ -44,7 +44,6 @@ public class Category {
 
   /**
    * Get id
-   *
    * @return id
    */
   @javax.annotation.Nullable
@@ -70,7 +69,6 @@ public class Category {
 
   /**
    * Get name
-   *
    * @return name
    */
   @javax.annotation.Nullable

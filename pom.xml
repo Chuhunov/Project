@@ -53,23 +53,24 @@
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>${openapi.generator.maven.plugin}</version>
                 <configuration>
-                    <generatorName>java</generatorName>
-                    <modelPackage>org.duckdns.sdet.models.generated</modelPackage>
-                    <output>${project.basedir}</output>
-                    <supportingFilesToGenerate>.class</supportingFilesToGenerate>
-                    <generateApis>false</generateApis>
-                    <generateModelTests>false</generateModelTests>
-                    <generateModelDocumentation>false</generateModelDocumentation>
-                    <generateSupportingFiles>false</generateSupportingFiles>
                     <addCompileSourceRoot>false</addCompileSourceRoot>
-                    <library>jersey2</library>
-                    <inputSpec>${project.basedir}/src/main/resources/swagger.json</inputSpec>
-                    <skip>false</skip>
                     <configOptions>
                         <containerDefaultToNull>true</containerDefaultToNull>
                         <hideGenerationTimestamp>true</hideGenerationTimestamp>
                         <openApiNullable>false</openApiNullable>
                     </configOptions>
+                    <generateApis>false</generateApis>
+                    <generateModelDocumentation>false</generateModelDocumentation>
+                    <generateModelTests>false</generateModelTests>
+                    <generateSupportingFiles>false</generateSupportingFiles>
+                    <generatorName>java</generatorName>
+                    <inputSpec>${project.basedir}/src/main/resources/swagger.json</inputSpec>
+                    <library>jersey2</library>
+                    <modelPackage>org.duckdns.sdet.models.generated</modelPackage>
+                    <output>${project.basedir}</output>
+                    <skip>false</skip>
+                    <supportingFilesToGenerate>.class</supportingFilesToGenerate>
+                    <templateDirectory>${project.basedir}/src/main/resources/templates</templateDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -77,6 +78,12 @@
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                        <configuration>
+                            <additionalProperties>
+                                <javaUseAnnotatedMethod>false</javaUseAnnotatedMethod>
+                                <generatedAnnotation>false</generatedAnnotation>
+                            </additionalProperties>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

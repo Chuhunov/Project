@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import java.util.Objects;
 
-
 /**
  * ModelApiResponse
  */
@@ -164,7 +163,7 @@ public class ModelApiResponse {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
-    }
+  }
 
 }
 
