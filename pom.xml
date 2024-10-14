@@ -78,12 +78,6 @@
                         <goals>
                             <goal>generate</goal>
                         </goals>
-                        <configuration>
-                            <additionalProperties>
-                                <javaUseAnnotatedMethod>false</javaUseAnnotatedMethod>
-                                <generatedAnnotation>false</generatedAnnotation>
-                            </additionalProperties>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>

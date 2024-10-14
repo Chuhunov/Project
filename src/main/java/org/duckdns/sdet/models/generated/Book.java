@@ -30,286 +30,268 @@ import java.util.Objects;
         Book.JSON_PROPERTY_TAGS,
         Book.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
 public class Book {
-    public static final String JSON_PROPERTY_ID = "id";
-    private Long id;
+  public static final String JSON_PROPERTY_ID = "id";
+  public static final String JSON_PROPERTY_CATEGORY = "category";
+  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String JSON_PROPERTY_PHOTO_URLS = "photoUrls";
+  public static final String JSON_PROPERTY_TAGS = "tags";
+  public static final String JSON_PROPERTY_STATUS = "status";
+  private Long id;
+  private Category category;
+  private String name;
+  private List<String> photoUrls;
+  private List<Tag> tags;
+  private StatusEnum status;
+  public Book() {
+  }
 
-    public static final String JSON_PROPERTY_CATEGORY = "category";
-    private Category category;
+  public Book id(Long id) {
+    this.id = id;
+    return this;
+  }
 
-    public static final String JSON_PROPERTY_NAME = "name";
-    private String name;
+  /**
+   * Get id
+   *
+   * @return id
+   */
 
-    public static final String JSON_PROPERTY_PHOTO_URLS = "photoUrls";
-    private List<String> photoUrls;
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-    public static final String JSON_PROPERTY_TAGS = "tags";
-    private List<Tag> tags;
-    public static final String JSON_PROPERTY_STATUS = "status";
+  public Long getId() {
+    return id;
+  }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Book category(Category category) {
+    this.category = category;
+    return this;
+  }
+
+  /**
+   * Get category
+   *
+   * @return category
+   */
+
+  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Category getCategory() {
+    return category;
+  }
+
+  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCategory(Category category) {
+    this.category = category;
+  }
+
+  public Book name(String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   *
+   * @return name
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getName() {
+    return name;
+  }
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Book photoUrls(List<String> photoUrls) {
+    this.photoUrls = photoUrls;
+    return this;
+  }
+
+  public Book addPhotoUrlsItem(String photoUrlsItem) {
+    if (this.photoUrls == null) {
+      this.photoUrls = new ArrayList<>();
+    }
+    this.photoUrls.add(photoUrlsItem);
+    return this;
+  }
+
+  /**
+   * Get photoUrls
+   *
+   * @return photoUrls
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_PHOTO_URLS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<String> getPhotoUrls() {
+    return photoUrls;
+  }
+
+  @JsonProperty(JSON_PROPERTY_PHOTO_URLS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setPhotoUrls(List<String> photoUrls) {
+    this.photoUrls = photoUrls;
+  }
+
+  public Book tags(List<Tag> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public Book addTagsItem(Tag tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Get tags
+   *
+   * @return tags
+   */
+
+  @JsonProperty(JSON_PROPERTY_TAGS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<Tag> getTags() {
+    return tags;
+  }
+
+  @JsonProperty(JSON_PROPERTY_TAGS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTags(List<Tag> tags) {
+    this.tags = tags;
+  }
+
+  public Book status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * book status in the store
+   *
+   * @return status
+   */
+
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
+
+  /**
+   * Return true if this Book object is equal to o.
+   */
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Book book = (Book) o;
+    return Objects.equals(this.id, book.id) &&
+            Objects.equals(this.category, book.category) &&
+            Objects.equals(this.name, book.name) &&
+            Objects.equals(this.photoUrls, book.photoUrls) &&
+            Objects.equals(this.tags, book.tags) &&
+            Objects.equals(this.status, book.status);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, category, name, photoUrls, tags, status);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Book {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    photoUrls: ").append(toIndentedString(photoUrls)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-    private StatusEnum status;
 
-    public Book() {
+  /**
+   * book status in the store
+   */
+  public enum StatusEnum {
+    AVAILABLE("available"),
+
+    PENDING("pending"),
+
+    SOLD("sold");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
     }
 
-    public Book id(Long id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * Get id
-     *
-     * @return id
-     */
-    @javax.annotation.Nullable
-    @JsonProperty(JSON_PROPERTY_ID)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-    public Long getId() {
-        return id;
-    }
-
-
-    @JsonProperty(JSON_PROPERTY_ID)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
-    public Book category(Category category) {
-        this.category = category;
-        return this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return category
-     */
-    @javax.annotation.Nullable
-    @JsonProperty(JSON_PROPERTY_CATEGORY)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-    public Category getCategory() {
-        return category;
-    }
-
-
-    @JsonProperty(JSON_PROPERTY_CATEGORY)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-
-    public Book name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return name
-     */
-    @javax.annotation.Nonnull
-    @JsonProperty(JSON_PROPERTY_NAME)
-    @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-    public String getName() {
-        return name;
-    }
-
-
-    @JsonProperty(JSON_PROPERTY_NAME)
-    @JsonInclude(value = JsonInclude.Include.ALWAYS)
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public Book photoUrls(List<String> photoUrls) {
-        this.photoUrls = photoUrls;
-        return this;
-    }
-
-    public Book addPhotoUrlsItem(String photoUrlsItem) {
-        if (this.photoUrls == null) {
-            this.photoUrls = new ArrayList<>();
+    @JsonCreator
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
         }
-        this.photoUrls.add(photoUrlsItem);
-        return this;
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    /**
-     * Get photoUrls
-     *
-     * @return photoUrls
-     */
-    @javax.annotation.Nonnull
-    @JsonProperty(JSON_PROPERTY_PHOTO_URLS)
-    @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-    public List<String> getPhotoUrls() {
-        return photoUrls;
-    }
-
-
-    @JsonProperty(JSON_PROPERTY_PHOTO_URLS)
-    @JsonInclude(value = JsonInclude.Include.ALWAYS)
-    public void setPhotoUrls(List<String> photoUrls) {
-        this.photoUrls = photoUrls;
-    }
-
-
-    public Book tags(List<Tag> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public Book addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    /**
-     * Get tags
-     *
-     * @return tags
-     */
-    @javax.annotation.Nullable
-    @JsonProperty(JSON_PROPERTY_TAGS)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-
-    @JsonProperty(JSON_PROPERTY_TAGS)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
-    }
-
-
-    public Book status(StatusEnum status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * book status in the store
-     *
-     * @return status
-     */
-    @javax.annotation.Nullable
-    @JsonProperty(JSON_PROPERTY_STATUS)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-    public StatusEnum getStatus() {
-        return status;
-    }
-
-
-    @JsonProperty(JSON_PROPERTY_STATUS)
-    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-    public void setStatus(StatusEnum status) {
-        this.status = status;
-    }
-
-
-    /**
-     * Return true if this Book object is equal to o.
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Book book = (Book) o;
-        return Objects.equals(this.id, book.id) &&
-                Objects.equals(this.category, book.category) &&
-                Objects.equals(this.name, book.name) &&
-                Objects.equals(this.photoUrls, book.photoUrls) &&
-                Objects.equals(this.tags, book.tags) &&
-                Objects.equals(this.status, book.status);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, category, name, photoUrls, tags, status);
+    @JsonValue
+    public String getValue() {
+      return value;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class Book {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    category: ").append(toIndentedString(category)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    photoUrls: ").append(toIndentedString(photoUrls)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("}");
-        return sb.toString();
+      return String.valueOf(value);
     }
-
-    /**
-     * book status in the store
-     */
-    public enum StatusEnum {
-        AVAILABLE("available"),
-
-        PENDING("pending"),
-
-        SOLD("sold");
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            for (StatusEnum b : StatusEnum.values()) {
-                if (b.value.equals(value)) {
-                    return b;
-                }
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-    }
+  }
 
 }
 
